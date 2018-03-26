@@ -8,8 +8,8 @@ const cookieParser = require('cookie-parser');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(cookieParser());
 app.use(express.static('public'));
-app.listen(3000);
 
+app.listen(3000, () => console.log('listening on http://localhost:3000'));
 module.exports = app;
