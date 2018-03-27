@@ -15,5 +15,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static('public'));
 
+app.post('/addquestion', questionController.addQuestion, (req, res) => res.send('got it'))
+
 app.listen(port, hostname, () => console.log(`listening on http://${hostname}:${port}`));
 module.exports = app;
