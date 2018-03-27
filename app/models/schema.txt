@@ -1,0 +1,30 @@
+                              Table "public.users"
+     Column     |            Type             | Collation | Nullable | Default
+ ---------------+-----------------------------+-----------+----------+---------
+  username      | character varying           |           | not null |
+  auth          | character varying           |           | not null |
+  email         | character varying           |           | not null |
+  question_subs | character varying[]         |           |          |
+  answers       | character varying[]         |           |          |
+  created_at    | timestamp without time zone |           |          | now()
+
+
+                         Table "public.questions"
+   Column   |            Type             | Collation | Nullable | Default
+------------+-----------------------------+-----------+----------+---------
+ question   | character varying           |           | not null |
+ submitter  | character varying           |           | not null |
+ answers    | character varying[]         |           |          |
+ difficulty | character varying           |           |          |
+ type       | character varying           |           |          |
+ company    | character varying           |           |          |
+ created_at | timestamp without time zone |           |          | now()
+
+
+                           Table "public.answers"
+    Column   |            Type             | Collation | Nullable | Default
+ ------------+-----------------------------+-----------+----------+---------
+  question   | character varying           |           | not null |
+  submitter  | character varying           |           | not null |
+  answer     | character varying           |           | not null |
+  created_at | timestamp without time zone |           |          | now()
