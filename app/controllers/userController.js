@@ -1,11 +1,18 @@
-const db = require('../models/userModel');
+const db = require('../models/database');
 
-function index(req, res) {
 
-}
+const userController = {
+    createNewUser: function (req, res) {
 
-function show(req, res) {
+    },
 
-}
+    verifyUser: function (req, res) {
 
-module.exports = { index, show };
+    },
+
+    updateUser: function (req, res) {
+
+    }
+};
+
+module.exports = userController;
