@@ -11,7 +11,7 @@ const questionController = {
       //builds query string
       const string = {
         text: `INSERT INTO questions (question, __authorid, difficulty, type, company) 
-        VALUES ($1, $2, $3, $4, $5) RETURNING (__questionid);`,
+        VALUES ($1, $2, $3, $4, $5) RETURNING *;`,
         values: [question, __authorid, difficulty, type, company]
       };
 
