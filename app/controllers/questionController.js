@@ -2,21 +2,25 @@ const db = require('../models/database');
 
 const questionController = {
     addQuestion: function (req, res, next) {
-      const { question, author, answers, difficulty, type, company } = req.body;
+
+      //deconstructs inputs
+      const { question, __authorid, difficulty, type, company } = req.body;
+
+      //builds query string
       const string = {
-        text: `INSERT INTO questions (question, submitter, answers, difficulty, type, company) 
-        VALUES ($1, $2, $3, $4, $5, $6);`,
-        values: [question, author, answers, difficulty, type, company]
+        text: `INSERT INTO questions (question, __authorid, difficulty, type, company) 
+        VALUES ($1, $2, $3, $4, $5) RETURNING (__questionid);`,
+        values: [question, __authorid, difficulty, type, company]
       };
+
+      //fires query to db returning questionid to client
       db.query(string)
-          .then(res => {
-            console.log(res)
+          .then(dbRes => {
+            res.locals.questionid = dbRes.rows[0];
+            next();
           })
-          .catch(e => console.log('error', e));
-      next();
+          .catch(e => res.send(e));
     }
-
 };
-
 
 module.exports = questionController;
