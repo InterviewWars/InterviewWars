@@ -1,30 +1,43 @@
-                              Table "public.users"
-     Column     |            Type             | Collation | Nullable | Default
- ---------------+-----------------------------+-----------+----------+---------
-  username      | character varying           |           | not null |
-  auth          | character varying           |           | not null |
-  email         | character varying           |           | not null |
-  question_subs | character varying[]         |           |          |
-  answers       | character varying[]         |           |          |
-  created_at    | timestamp without time zone |           |          | now()
+                                           Table "public.users"
+   Column   |            Type             | Collation | Nullable |                 Default
+------------+-----------------------------+-----------+----------+-----------------------------------------
+ email      | character varying           |           | not null |
+ created_at | timestamp without time zone |           |          | now()
+ username   | character varying           |           | not null |
+ __userid   | integer                     |           | not null | nextval('users___userid_seq'::regclass)
+ password   | character varying           |           | not null |
+Indexes:
+    "users_pkey" PRIMARY KEY, btree (__userid)
+Referenced by:
+    TABLE "answers" CONSTRAINT "answers_author_fkey" FOREIGN KEY (author) REFERENCES users(__userid)
+    TABLE "questions" CONSTRAINT "questions_author_fkey" FOREIGN KEY (author) REFERENCES users(__userid)
 
 
-                         Table "public.questions"
+                                              Table "public.questions"
+    Column    |            Type             | Collation | Nullable |                     Default
+--------------+-----------------------------+-----------+----------+-------------------------------------------------
+ difficulty   | character varying           |           |          |
+ type         | character varying           |           |          |
+ company      | character varying           |           |          |
+ created_at   | timestamp without time zone |           |          | now()
+ question     | character varying           |           | not null |
+ __questionid | integer                     |           | not null | nextval('questions___questionid_seq'::regclass)
+ author       | integer                     |           | not null |
+Indexes:
+    "questions_pkey" PRIMARY KEY, btree (__questionid)
+Foreign-key constraints:
+    "questions_author_fkey" FOREIGN KEY (author) REFERENCES users(__userid)
+Referenced by:
+    TABLE "answers" CONSTRAINT "answers_questions_fkey" FOREIGN KEY (questions) REFERENCES questions(__questionid)
+
+
+                          Table "public.answers"
    Column   |            Type             | Collation | Nullable | Default
 ------------+-----------------------------+-----------+----------+---------
- question   | character varying           |           | not null |
- submitter  | character varying           |           | not null |
- answers    | character varying[]         |           |          |
- difficulty | character varying           |           |          |
- type       | character varying           |           |          |
- company    | character varying           |           |          |
+ answer     | character varying           |           | not null |
  created_at | timestamp without time zone |           |          | now()
-
-
-                           Table "public.answers"
-    Column   |            Type             | Collation | Nullable | Default
- ------------+-----------------------------+-----------+----------+---------
-  question   | character varying           |           | not null |
-  submitter  | character varying           |           | not null |
-  answer     | character varying           |           | not null |
-  created_at | timestamp without time zone |           |          | now()
+ author     | integer                     |           | not null |
+ questions  | integer                     |           | not null |
+Foreign-key constraints:
+    "answers_author_fkey" FOREIGN KEY (author) REFERENCES users(__userid)
+    "answers_questions_fkey" FOREIGN KEY (questions) REFERENCES questions(__questionid)
