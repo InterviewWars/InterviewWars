@@ -9,8 +9,8 @@
 Indexes:
     "users_pkey" PRIMARY KEY, btree (__userid)
 Referenced by:
-    TABLE "answers" CONSTRAINT "answers_author_fkey" FOREIGN KEY (author) REFERENCES users(__userid)
-    TABLE "questions" CONSTRAINT "questions_author_fkey" FOREIGN KEY (author) REFERENCES users(__userid)
+    TABLE "answers" CONSTRAINT "answers___authorid_fkey" FOREIGN KEY (__authorid) REFERENCES users(__userid)
+    TABLE "questions" CONSTRAINT "questions___authorid_fkey" FOREIGN KEY (__authorid) REFERENCES users(__userid)
 
 
                                               Table "public.questions"
@@ -22,22 +22,25 @@ Referenced by:
  created_at   | timestamp without time zone |           |          | now()
  question     | character varying           |           | not null |
  __questionid | integer                     |           | not null | nextval('questions___questionid_seq'::regclass)
- author       | integer                     |           | not null |
+ __authorid   | integer                     |           | not null |
 Indexes:
     "questions_pkey" PRIMARY KEY, btree (__questionid)
 Foreign-key constraints:
-    "questions_author_fkey" FOREIGN KEY (author) REFERENCES users(__userid)
+    "questions___authorid_fkey" FOREIGN KEY (__authorid) REFERENCES users(__userid)
 Referenced by:
-    TABLE "answers" CONSTRAINT "answers_questions_fkey" FOREIGN KEY (questions) REFERENCES questions(__questionid)
+    TABLE "answers" CONSTRAINT "answers___questionid_fkey" FOREIGN KEY (__questionid) REFERENCES questions(__questionid)
 
 
-                          Table "public.answers"
-   Column   |            Type             | Collation | Nullable | Default
-------------+-----------------------------+-----------+----------+---------
- answer     | character varying           |           | not null |
- created_at | timestamp without time zone |           |          | now()
- author     | integer                     |           | not null |
- questions  | integer                     |           | not null |
+                                             Table "public.answers"
+    Column    |            Type             | Collation | Nullable |                   Default
+--------------+-----------------------------+-----------+----------+---------------------------------------------
+ answer       | character varying           |           | not null |
+ created_at   | timestamp without time zone |           |          | now()
+ __authorid   | integer                     |           | not null |
+ __questionid | integer                     |           | not null |
+ __answerid   | integer                     |           | not null | nextval('answers___answerid_seq'::regclass)
+Indexes:
+    "answers_pkey" PRIMARY KEY, btree (__answerid)
 Foreign-key constraints:
-    "answers_author_fkey" FOREIGN KEY (author) REFERENCES users(__userid)
-    "answers_questions_fkey" FOREIGN KEY (questions) REFERENCES questions(__questionid)
+    "answers___authorid_fkey" FOREIGN KEY (__authorid) REFERENCES users(__userid)
+    "answers___questionid_fkey" FOREIGN KEY (__questionid) REFERENCES questions(__questionid)
