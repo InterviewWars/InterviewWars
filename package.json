@@ -2,10 +2,11 @@
   "name": "interviewwars",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./app/views/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app/server/server.js"
+    "start": "node ./app/bin/www",
+    "dev": "nodemon ./app/bin/www"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,8 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "pg": "^7.4.1"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",
