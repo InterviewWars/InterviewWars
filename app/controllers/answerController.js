@@ -2,14 +2,14 @@ const db = require('../models/database');
 
 const answerController = {
     addAnswer: function (req, res, next) {
-
+      console.log('answer')
       //deconstructs inputs
       const { __questionid, __authorid, answer } = req.body;
 
       //builds query string
       const string = {
         text: `INSERT INTO answers (__questionid, __authorid, answer)
-        VALUES ($1, $2, $3) RETURNING __answerid;`,
+        VALUES ($1, $2, $3) RETURNING *;`,
         values: [__questionid, __authorid, answer]
       };
 

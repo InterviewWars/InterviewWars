@@ -27,7 +27,7 @@ app.get("/getAllUsers", userController.getAllUsers, (req, res) => {
 });
 
 
-// Questionsç
+// Questions
 app.post('/addQuestion', questionController.addQuestion, (req, res) => res.send(res.locals.questionid));
 
 //Answers
