@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static("public"));
-
+console.log('hello');
 // Users
 app.post(
   "/loginUser",
