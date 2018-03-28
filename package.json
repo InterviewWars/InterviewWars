@@ -2,9 +2,11 @@
   "name": "interviewwars",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./app/views/app.js",
   "scripts": {
-    "start": "webpack-dev-server --hot",
+    "start": "node ./app/bin/www",
+    "dev": "nodemon ./app/bin/www",
+    "dev-server": "webpack-dev-server --hot",
     "webpack": "webpack"
   },
   "repository": {
@@ -32,13 +34,14 @@
     "react-dom": "^16.2.0",
     "style-loader": "^0.20.2",
     "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.1"
+    "pg": "^7.4.1"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "nodemon": "^1.17.2"
+    "nodemon": "^1.17.2",
+    "webpack-dev-server": "^2.11.2"
   }
 }

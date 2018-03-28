@@ -8214,11 +8214,6 @@ var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import App from './App.js';
-//
-// ReactDOM.render(<App />, document.getElementById('app'));
 _reactDom2.default.render(_react2.default.createElement(
     _MuiThemeProvider2.default,
     null,
@@ -25495,34 +25490,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // import React, {Component} from 'react';
-// import { render } from 'react-dom';
-//
-// import './styles.css'
-//
-//
-//
-// // export default class App extends
-//  class App extends Component{
-//    constructor(props) {
-//       super(props);
-//       this.state = {
-//         inputValue: ''
-//       };
-//     }
-//    render() {
-//       return (
-//          <div>
-//             <h1>Hello</h1>
-//             <button onClick={()=>console.log('yaclickedme')}>
-//               Click me!
-//             </button>
-//          </div>
-//       );
-//    }
-// }
-// render(<App />, document.getElementById('app'));
-
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var App = function (_React$Component) {
    _inherits(App, _React$Component);
@@ -25584,7 +25552,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var style = {
     margin: 12,
-    backgroundColor: 'red',
+    backgroundColor: 'teal',
     color: 'black'
 };
 
