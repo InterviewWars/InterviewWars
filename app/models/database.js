@@ -11,4 +11,4 @@ client.connect((err, db_) => {
     db.conn = db_;
 });
 
-module.exports = db;
+module.exports = client;
