@@ -1,5 +1,15 @@
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import App from './App.js';
+//
+// ReactDOM.render(<App />, document.getElementById('app'));
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.js';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+<MuiThemeProvider>
+    <App />
+    </MuiThemeProvider>,
+document.getElementById('app'));
