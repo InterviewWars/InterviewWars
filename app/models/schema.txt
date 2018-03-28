@@ -5,7 +5,6 @@
  created_at | timestamp without time zone |           |          | now()
  username   | character varying           |           | not null |
  __userid   | integer                     |           | not null | nextval('users___userid_seq'::regclass)
- password   | character varying           |           | not null |
 Indexes:
     "users_pkey" PRIMARY KEY, btree (__userid)
 Referenced by:

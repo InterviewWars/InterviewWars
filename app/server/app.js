@@ -28,8 +28,9 @@ app.get("/getAllUsers", userController.getAllUsers, (req, res) => {
 
 
 // Questions
-app.post("/addQuestion", questionController.addQuestion, (req, res) => {
-  res.send("got it");
-});
+app.post('/addQuestion', questionController.addQuestion, (req, res) => res.send(res.locals.questionid));
+
+//Answers
+app.post('/addAnswer', answerController.addAnswer, (req, res) => res.send(res.locals.questionid));
 
 module.exports = app;
