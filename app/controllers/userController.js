@@ -26,8 +26,6 @@ const userController = {
   // Creates user only in conditional that user does not exist in database
   createNewUser: function(req, res, next) {
     const locals = res.locals;
-    console.log("Inside create user", res.locals.result);
-    console.log("Email address for new user", locals.result.email);
     const text = `INSERT INTO users(email) VALUES($1) RETURNING *`;
     const values = [`${locals.result.email}`];
 
