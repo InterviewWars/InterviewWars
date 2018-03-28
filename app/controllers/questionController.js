@@ -1,6 +1,8 @@
 const db = require('../models/database');
 
 const questionController = {
+
+    //adds a question to the database, __authorid must be provided
     addQuestion: function (req, res, next) {
 
       //deconstructs inputs
