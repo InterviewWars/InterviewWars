@@ -1,0 +1,31 @@
+* {
+    color: white;
+}
+
+h1, h2 {
+    margin-top: 30px;
+    margin-left: 15px;
+    text-align: center;
+}
+
+a {
+    color: #bb432c;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #303133;
+}
+
+button:hover {
+    cursor: pointer;
+    font-weight: 800;
+    font-style: underline;
+}
+
+
+.text-red {
+    color: #bb432c;
+}
+
