@@ -5,9 +5,7 @@
   "main": "./app/views/app.js",
   "scripts": {
     "start": "node ./app/bin/www",
-    "dev": "nodemon ./app/bin/www",
-    "dev-server": "webpack-dev-server",
-    "webpack": "webpack"
+    "start:dev": "webpack-dev-server --hot"
   },
   "repository": {
     "type": "git",
@@ -30,12 +28,11 @@
     "css-loader": "^0.28.9",
     "express": "^4.16.3",
     "material-ui": "^1.0.0-beta.38",
-    "pg": "^7.4.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-google-login": "^3.1.0",
     "style-loader": "^0.20.2",
-    "webpack": "^3.11.0"
+    "webpack": "^3.11.0",
+    "pg": "^7.4.1"
   },
   "devDependencies": {
     "eslint-config-airbnb": "^16.1.0",
