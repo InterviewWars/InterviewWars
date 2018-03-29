@@ -3,13 +3,13 @@
 }
 
 h1, h2 {
+    margin-top: 30px;
     margin-left: 15px;
-    color: #cf4b32;
     text-align: center;
 }
 
 a {
-    color: white;
+    color: #bb432c;
 }
 
 body {
@@ -23,3 +23,9 @@ button:hover {
     font-weight: 800;
     font-style: underline;
 }
+
+
+.text-red {
+    color: #bb432c;
+}
+

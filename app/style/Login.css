@@ -1,0 +1,48 @@
+#login-panel {
+    padding: 50px;
+    background-color:#424242;
+    border-radius: 3px;
+
+    width: 300px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.MuiInput-input-13 {
+    width: 150px;
+}
+
+.text-red {
+    color: #bb432c;
+}
+
+div.text-center {
+    text-align: center;
+}
+
+div.fields {
+    margin-bottom: 15px;
+}
+
+#login-button:hover {
+    font-weight: 800;
+}
+
+#googlOAuth-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#parent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-div {
+    height: 100%;
+
+}
