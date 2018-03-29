@@ -46,6 +46,12 @@ it('should add an answer at /addAnswer', function(done) {
     .set('Accept', 'application/json')
     .expect(200)
     .end(function (err, res) {
+      expect(res.body).to.have.property("__authorid");
+      expect(res.body.__authorid).to.equal(1);
+      expect(res.body).to.have.property("__questionid");
+      expect(res.body.__questionid).to.equal(26);
+      expect(res.body).to.have.property("answer");
+      expect(res.body.answer).to.equal("test answer");
       if (err) throw err;
       done();
     });
@@ -61,3 +67,12 @@ it('should retrieve list of users from getAllUsers', function(done) {
       });
 });
 
+it('should retrieve list of users from getAllQuestions', function(done) {
+  supertest(app)
+      .get('/getAllQuestions')
+      .expect(200)
+      .end(function (err, res) {
+        if (err) throw err;
+        done();
+      });
+});

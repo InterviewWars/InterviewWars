@@ -1,6 +1,8 @@
-import React, { Component } from "react";
-import TextField from "material-ui/TextField";
-import Button from "material-ui/Button";
+import React, { Component } from 'react';
+import TextField from 'material-ui/TextField';
+import Button from 'material-ui/Button';
+import { render } from 'react-dom';
+import { Link } from 'react-router-dom';
 import { GoogleLogin } from "react-google-login";
 
 const style = {
@@ -14,6 +16,7 @@ class Login extends Component {
     super(props);
     this.state = {};
     //binding here
+
     this.googleOAuthSuccess = this.googleOAuthSuccess.bind(this);
     this.googleOAuthFailure = this.googleOAuthFailure.bind(this);
   }
@@ -40,10 +43,10 @@ class Login extends Component {
           <br />
           <TextField> </TextField>
           Password
-          <Button label="Login" style={style}>
+          <Button label="Login" style={style}> <Link to="/home">Login</Link> 
             {" "}
-            Login{" "}
-          </Button>
+            {" "}
+            </Button >
         </div>
         <GoogleLogin
           clientId="881814036265-e59ej1jgrmph8v4h9pffl1629dpqssdn.apps.googleusercontent.com"
@@ -55,4 +58,5 @@ class Login extends Component {
     );
   }
 }
+
 export default Login;

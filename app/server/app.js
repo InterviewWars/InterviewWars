@@ -6,11 +6,15 @@ const cookieParser = require("cookie-parser");
 const userController = require("./../controllers/userController");
 const questionController = require("./../controllers/questionController");
 const answerController = require("./../controllers/answerController");
+const searchController = require("./../controllers/searchController");
+const cors = require('cors');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static("public"));
+app.use(cors());
+
 
 // Users
 app.post(
@@ -30,9 +34,17 @@ app.get("/getAllUsers", userController.getAllUsers, (req, res) => {
 // Questions
 app.post('/addQuestion', questionController.addQuestion, (req, res) => res.send(res.locals.question));
 
-//Answers
+//Add answers
 app.post('/addAnswer', answerController.addAnswer, (req, res) => res.send(res.locals.answer));
 
-app.get('/getAllQuestions', questionController.getAllQuestions, (req, res) => res.send(res.locals.question));
+//Get all answers
+app.get('/getAllQuestions', searchController.getAllQuestions, (req, res) => {
+  console.log('This are the questions', res.locals.question);
+  res.json(res.locals.question);
+});
+
+//search by table, column, and input
+app.post('/selectBy', searchController.selectBy, (req, res) => res.send(res.locals.question));
+
 
 module.exports = app;
