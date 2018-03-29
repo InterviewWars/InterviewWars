@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Button from "material-ui/Button";
+import { Button, Subheader, List, ListItem } from "material-ui";
 import { render } from "react-dom";
 import { Link } from "react-router-dom";
 
+import './../style/Home.css';
 
 class Home extends Component {
   constructor(props) {
@@ -31,14 +32,31 @@ class Home extends Component {
       error: function(err) {
         console.log("Get Questions Error", err);
       }
-    })
+    });
   }
 
   render() {
     const state = this.state;
     console.log(this.state.allQuestions);
-    const Questions = state.allQuestions.map((question, index) => {
-      return <li>{question.question}</li>;
+    const Questions = state.allQuestions.map((oneQuestion, index) => {
+      const {
+        difficulty,
+        type,
+        company,
+        created_at,
+        question,
+        __questionid: questionID,
+        __authorID: authorID
+      } = oneQuestion;
+      console.log("this is the key", questionID);
+      return (
+        <li key={questionID} className="questions">
+          {question} {type} {company} {created_at}
+          <Button label="Answer" className="answer">
+            <Link to="/answer">Answer </Link>
+          </Button>
+        </li>
+      );
     });
 
     return (
@@ -47,17 +65,14 @@ class Home extends Component {
         <h2>
           {" "}
           Please answer a question below or submit a new question{" "}
-          <Button label="SubmitQ" >
+          <Button label="SubmitQ">
             {" "}
             <Link to="/question">Submit New </Link>{" "}
           </Button>
         </h2>
-        <ul>
+        <List>
           {Questions}
-        </ul>
-        <Button label="Answer">
-          <Link to="/answer">Answer </Link>
-        </Button>
+        </List>
       </div>
     );
   }

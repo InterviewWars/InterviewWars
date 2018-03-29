@@ -1,5 +1,17 @@
-{
-  margin: 12;
-  backgroundColor: "teal";
-  color: "black";
+li.questions {
+    background-color: #2b2c2e;
+    height: 40px;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px;
+    
+}
+
+button.answer {
+  float: right;
+}
+
+button.answer:hover {
+  font-weight: 800;
 }
