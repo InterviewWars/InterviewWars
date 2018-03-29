@@ -6,8 +6,8 @@ import TextField from 'material-ui/TextField';
 
 const style = {
     margin: 12,
-    backgroundColor: 'teal',
-    color: 'black'
+    backgroundColor: 'black',
+    color: 'white'
   }; 
 
   class Answer extends Component {
@@ -22,13 +22,13 @@ render() {
     return (
         <div>
             <h1> Thanks for working on a solution! </h1>
-            <h2> <textarea
+            <textarea
   rows="10"
   cols="60"
 /> 
  <Button label="Submit" style={style} > 
  <Link to="/useranswers"> Submit </Link> 
- </Button ></h2>
+ </Button >
         </div>
     )
 }

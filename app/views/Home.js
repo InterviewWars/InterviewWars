@@ -3,7 +3,7 @@ import { Button, Subheader, List, ListItem, Select, InputLabel, TextField, FormC
 import { render } from "react-dom";
 import { Link } from "react-router-dom";
 
-import './../style/Home.css';
+import "./../style/Home.css";
 
 class Home extends Component {
   constructor(props) {
@@ -80,7 +80,7 @@ class Home extends Component {
       console.log("this is the key", questionID);
       return (
         <li key={questionID} className="questions">
-          {question} {type} {company} {created_at}
+            {question} {type} {company} {created_at}
           <Button label="Answer" className="answer">
             <Link to="/answer">Answer </Link>
           </Button>
