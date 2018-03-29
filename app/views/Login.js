@@ -7,7 +7,7 @@ import { GoogleLogin } from "react-google-login";
 
 const style = {
   margin: 12,
-  backgroundColor: "teal",
+  backgroundColor: "#0b0c0c",
   color: "black"
 };
 

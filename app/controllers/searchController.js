@@ -6,6 +6,7 @@ const searchController = {
 
     db.query(string)
         .then(dbRes => {
+          console.log('Hello');
           res.locals.question = dbRes.rows;
           next()
         })

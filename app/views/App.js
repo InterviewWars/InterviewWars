@@ -6,6 +6,10 @@ import Question from './Question';
 import Answer from './Answer';
 import UserAnswers from './UserAnswers'
 
+// css 
+import './../style/Main.css';
+
+
 class App extends React.Component {
    render() {
       return (

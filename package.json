@@ -29,7 +29,6 @@
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
-    "css-loader": "^0.28.9",
     "express": "^4.16.3",
     "material-ui": "^1.0.0-beta.38",
     "pg": "^7.4.1",
@@ -38,17 +37,18 @@
     "react-google-login": "^3.1.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "style-loader": "^0.20.2",
     "webpack": "^3.11.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "css-loader": "^0.28.9",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "mocha": "^5.0.5",
     "nodemon": "^1.17.2",
+    "style-loader": "^0.20.2",
     "supertest": "^3.0.0",
     "webpack-dev-server": "^2.11.2"
   }
