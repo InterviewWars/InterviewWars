@@ -23,7 +23,11 @@ render() {
     return (
         <div>
             <h1> Thanks for adding your interview question! </h1>
-            <h2> Enter here  <TextField >  </TextField> <Button label="Submit" style={style} > Submit </Button ></h2>
+            <h2> Enter here  <text-area 
+            rows="10"
+            cols="60"
+            />
+      <Button label="Submit" style={style} > Submit </Button ></h2>
         </div>
     )
 }
