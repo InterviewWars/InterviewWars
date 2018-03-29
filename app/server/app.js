@@ -7,11 +7,13 @@ const userController = require("./../controllers/userController");
 const questionController = require("./../controllers/questionController");
 const answerController = require("./../controllers/answerController");
 const searchController = require("./../controllers/searchController");
+const cors = require('cors');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static("public"));
+app.use(cors());
 
 // Users
 app.post(
