@@ -7,5 +7,5 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 ReactDOM.render(
 <MuiThemeProvider>
     <App />
-    </MuiThemeProvider>,
+</MuiThemeProvider>,
 document.getElementById('app'));
