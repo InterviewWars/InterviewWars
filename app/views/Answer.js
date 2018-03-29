@@ -6,7 +6,7 @@ import TextField from 'material-ui/TextField';
 
 const style = {
     margin: 12,
-    backgroundColor: 'teal',
+    backgroundColor: 'black',
     color: 'black'
   }; 
 
