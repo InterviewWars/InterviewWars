@@ -33,4 +33,6 @@ app.post('/addQuestion', questionController.addQuestion, (req, res) => res.send(
 //Answers
 app.post('/addAnswer', answerController.addAnswer, (req, res) => res.send(res.locals.answer));
 
+app.get('/getAllQuestions', questionController.getAllQuestions, (req, res) => res.send(res.locals.question));
+
 module.exports = app;

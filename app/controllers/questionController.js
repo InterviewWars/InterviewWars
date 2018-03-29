@@ -22,7 +22,19 @@ const questionController = {
         next();
       })
       .catch(e => res.send(e));
+  },
+
+  getAllQuestions: function (req, res, next) {
+    const string = 'SELECT * FROM questions;';
+
+    db.query(string)
+        .then(dbRes => {
+          res.locals.question = dbRes.rows;
+          next()
+        })
+        .catch(e => res.send(e));
   }
+
 };
 
 module.exports = questionController;
