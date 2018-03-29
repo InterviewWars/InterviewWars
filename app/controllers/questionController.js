@@ -33,7 +33,40 @@ const questionController = {
           next()
         })
         .catch(e => res.send(e));
-  }
+  },
+
+  selectByCompany: function (req, res, next) {
+    const param = req.body.company;
+    const string = `SELECT * FROM questions WHERE company = '${param}'`;
+    db.query(string)
+        .then(dbRes => {
+          res.locals.question = dbRes.rows;
+          next()
+        })
+        .catch(e => res.send(e));
+  },
+
+  selectByDifficulty: function (req, res, next) {
+    const param = req.body.difficulty;
+    const string = `SELECT * FROM questions WHERE difficulty = '${param}'`;
+    db.query(string)
+        .then(dbRes => {
+          res.locals.question = dbRes.rows;
+          next()
+        })
+        .catch(e => res.send(e));
+  },
+
+  selectByAuthor: function (req, res, next) {
+    const param = req.body.__authorid;
+    const string = `SELECT * FROM questions WHERE __authorid = '${param}'`;
+    db.query(string)
+        .then(dbRes => {
+          res.locals.question = dbRes.rows;
+          next()
+        })
+        .catch(e => res.send(e));
+  },
 
 };
 

@@ -35,4 +35,10 @@ app.post('/addAnswer', answerController.addAnswer, (req, res) => res.send(res.lo
 
 app.get('/getAllQuestions', questionController.getAllQuestions, (req, res) => res.send(res.locals.question));
 
+app.post('/selectByCompany', questionController.selectByCompany, (req, res) => res.send(res.locals.question));
+
+app.post('/selectByDifficulty', questionController.selectByDifficulty, (req, res) => res.send(res.locals.question));
+
+app.post('/selectByAuthor', questionController.selectByAuthor, (req, res) => res.send(res.locals.question));
+
 module.exports = app;
