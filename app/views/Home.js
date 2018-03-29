@@ -12,7 +12,7 @@ class Home extends Component {
       allQuestions: []
     };
     // binding here
-    // this.getQuestions = this.getQuestions.bind(this);
+    this.getQuestions = this.getQuestions.bind(this);
   }
 
   componentDidMount() {
@@ -48,12 +48,14 @@ class Home extends Component {
         __questionid: questionID,
         __authorID: authorID
       } = oneQuestion;
-      console.log("this is the key", questionID);
+
+      // const url = `/answer/${questionID}`;
+
       return (
         <li key={questionID} className="questions">
-            {question} {type} {company} {created_at}
+          {question}ow 
           <Button label="Answer" className="answer">
-            <Link to="/answer">Answer </Link>
+            <Link to={url}>Answer </Link>
           </Button>
         </li>
       );

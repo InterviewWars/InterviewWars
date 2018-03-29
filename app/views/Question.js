@@ -25,10 +25,10 @@ class Question extends Component {
           <h2> Enter here</h2> <text-area rows="10" cols="60" />
         </div>
         <div>
-                <Button label="Submit" style={style}>
-                    {" "}
-                    Submit{" "}
-                </Button>
+          <Button label="Submit" style={style}>
+            {" "}
+            Submit{" "}
+          </Button>
         </div>
       </div>
     );

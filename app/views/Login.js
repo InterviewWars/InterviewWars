@@ -49,7 +49,7 @@ class Login extends Component {
               <label htmlFor="">Username</label>
             </div>
             <div className="fields text-center">
-              <TextField hintText="" />
+              <TextField hintText="" style={fieldStyle} />
             </div>
             <div className="fields text-center">
               <label htmlFor="">Password</label>
