@@ -14,7 +14,6 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static("public"));
 app.use(cors());
-console.log('for commit')
 
 // Users
 app.post(
@@ -38,7 +37,6 @@ app.post('/addAnswer', answerController.addAnswer, (req, res) => res.send(res.lo
 
 //Get all answers
 app.get('/getAllQuestions', searchController.getAllQuestions, (req, res) => {
-  console.log('This are the questions', res.locals.question);
   res.json(res.locals.question);
 });
 
