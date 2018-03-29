@@ -28,9 +28,11 @@ app.get("/getAllUsers", userController.getAllUsers, (req, res) => {
 
 
 // Questions
-app.post('/addQuestion', questionController.addQuestion, (req, res) => res.send(res.locals.questionid));
+app.post('/addQuestion', questionController.addQuestion, (req, res) => res.send(res.locals.question));
 
 //Answers
-app.post('/addAnswer', answerController.addAnswer, (req, res) => res.send(res.locals.questionid));
+app.post('/addAnswer', answerController.addAnswer, (req, res) => res.send(res.locals.answer));
+
+app.get('/getAllQuestions', questionController.getAllQuestions, (req, res) => res.send(res.locals.question));
 
 module.exports = app;
