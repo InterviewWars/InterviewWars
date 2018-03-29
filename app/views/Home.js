@@ -53,9 +53,10 @@ class Home extends Component {
 
       return (
         <li key={questionID} className="questions">
-          {question}ow 
+          {question} <br/>
+          {difficulty} <br/>
           <Button label="Answer" className="answer">
-            <Link to={url}>Answer </Link>
+            <Link to="/answers" testing={company}>Answer </Link>
           </Button>
         </li>
       );

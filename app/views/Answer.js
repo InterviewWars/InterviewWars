@@ -19,6 +19,11 @@ class Answer extends Component {
     // binding here
   }
 
+  componentDidMount() {
+      console.log("Am I passing in the props?", this.props.testing);
+  }
+
+
   render() {
     return (
       <div>

@@ -8,8 +8,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 ReactDOM.render(
   <MuiThemeProvider>
     <Center>
-      <App />
+    <App />
     </Center>
-  </MuiThemeProvider>,
-  document.getElementById("app")
-);
+</MuiThemeProvider>,
+
+document.getElementById('app'));
