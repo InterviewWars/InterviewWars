@@ -12,6 +12,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static("public"));
 
+
 // Users
 app.post(
   "/loginUser",
@@ -27,7 +28,7 @@ app.get("/getAllUsers", userController.getAllUsers, (req, res) => {
 });
 
 
-// Questions
+// Questionsç
 app.post('/addQuestion', questionController.addQuestion, (req, res) => res.send(res.locals.questionid));
 
 //Answers
