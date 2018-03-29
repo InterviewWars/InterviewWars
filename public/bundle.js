@@ -45001,12 +45001,10 @@ var Question = function (_Component) {
                     'h2',
                     null,
                     ' Enter here  ',
-                    _react2.default.createElement(
-                        _TextField2.default,
-                        null,
-                        '  '
-                    ),
-                    ' ',
+                    _react2.default.createElement('text-area', {
+                        rows: '10',
+                        cols: '60'
+                    }),
                     _react2.default.createElement(
                         _Button2.default,
                         { label: 'Submit', style: style },
