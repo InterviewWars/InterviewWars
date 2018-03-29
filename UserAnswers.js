@@ -10,7 +10,7 @@ const style = {
     color: 'black'
   }; 
 
-  class Question extends Component {
+  class UserAnswers extends Component {
     constructor(props) {
     super(props);
     this.state = {
@@ -22,15 +22,10 @@ const style = {
 render() {
     return (
         <div>
-            <h1> Thanks for adding your interview question! </h1>
-            <h2> Enter here  <text-area 
-            rows="10"
-            cols="60"
-            />
-      <Button label="Submit" style={style} > Submit </Button ></h2>
+            <h1> Thanks for your solution! Please find other user solutions below: </h1>
         </div>
     )
 }
 }
 
-export default Question;
+export default UserAnswers;
