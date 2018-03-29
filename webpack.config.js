@@ -38,7 +38,7 @@ var config = {
       },
    devServer: {
          inline: true, // autorefresh
-         port: 3000 // development port server
+         port: 8080 // development port server
       },
    module: {
          loaders: [

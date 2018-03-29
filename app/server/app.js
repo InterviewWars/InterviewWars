@@ -30,7 +30,6 @@ app.get("/getAllUsers", userController.getAllUsers, (req, res) => {
   res.send("get all user");
 });
 
-
 // Questions
 app.post('/addQuestion', questionController.addQuestion, (req, res) => res.send(res.locals.question));
 
