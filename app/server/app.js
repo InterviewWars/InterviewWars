@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const userController = require("./../controllers/userController");
 const questionController = require("./../controllers/questionController");
 const answerController = require("./../controllers/answerController");
+const searchController = require("./../controllers/searchController");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -30,15 +31,14 @@ app.get("/getAllUsers", userController.getAllUsers, (req, res) => {
 // Questions
 app.post('/addQuestion', questionController.addQuestion, (req, res) => res.send(res.locals.question));
 
-//Answers
+//Add answers
 app.post('/addAnswer', answerController.addAnswer, (req, res) => res.send(res.locals.answer));
 
-app.get('/getAllQuestions', questionController.getAllQuestions, (req, res) => res.send(res.locals.question));
+//Get all answers
+app.get('/getAllQuestions', searchController.getAllQuestions, (req, res) => res.send(res.locals.question));
 
-app.post('/selectByCompany', questionController.selectByCompany, (req, res) => res.send(res.locals.question));
+//search by table, column, and input
+app.post('/selectBy', searchController.selectBy, (req, res) => res.send(res.locals.question));
 
-app.post('/selectByDifficulty', questionController.selectByDifficulty, (req, res) => res.send(res.locals.question));
-
-app.post('/selectByAuthor', questionController.selectByAuthor, (req, res) => res.send(res.locals.question));
 
 module.exports = app;
