@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Button from 'material-ui/Button';
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
+import TextField from 'material-ui/TextField';
 
 const style = {
     margin: 12,
@@ -9,23 +10,23 @@ const style = {
     color: 'black'
   }; 
 
-class Home extends Component {
+  class Question extends Component {
     constructor(props) {
     super(props);
     this.state = {
 
     };
-// binding here
+    // binding here
 }
+
 render() {
     return (
         <div>
-            <h1> Welcome to Interview Wars! </h1>
-            <h2> Please answer a question below or submit a new question  <Button label="SubmitQ" style={style} > <Link to="/question">Submit New </Link> </Button ></h2>
+            <h1> Thanks for adding your interview question! </h1>
+            <h2> Enter here  <TextField >  </TextField> <Button label="Submit" style={style} > Submit </Button ></h2>
         </div>
     )
 }
 }
 
-
-export default Home;
+export default Question;
