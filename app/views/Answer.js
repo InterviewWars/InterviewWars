@@ -14,7 +14,6 @@ const style = {
     constructor(props) {
     super(props);
     this.state = {
-
     };
     // binding here
 }

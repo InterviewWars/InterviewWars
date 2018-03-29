@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static("public"));
 app.use(cors());
-
+console.log('for commit')
 
 // Users
 app.post(
@@ -30,7 +30,6 @@ app.get("/getAllUsers", userController.getAllUsers, (req, res) => {
   res.send("get all user");
 });
 
-
 // Questions
 app.post('/addQuestion', questionController.addQuestion, (req, res) => res.send(res.locals.question));
 
@@ -38,7 +37,10 @@ app.post('/addQuestion', questionController.addQuestion, (req, res) => res.send(
 app.post('/addAnswer', answerController.addAnswer, (req, res) => res.send(res.locals.answer));
 
 //Get all answers
-app.get('/getAllQuestions', searchController.getAllQuestions, (req, res) => res.send(res.locals.question));
+app.get('/getAllQuestions', searchController.getAllQuestions, (req, res) => {
+  console.log('This are the questions', res.locals.question);
+  res.json(res.locals.question);
+});
 
 //search by table, column, and input
 app.post('/selectBy', searchController.selectBy, (req, res) => res.send(res.locals.question));
