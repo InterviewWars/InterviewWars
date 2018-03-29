@@ -9,6 +9,7 @@ ReactDOM.render(
 <MuiThemeProvider>
     <Center>
     <App />
-        </Center>
+    </Center>
 </MuiThemeProvider>,
+
 document.getElementById('app'));

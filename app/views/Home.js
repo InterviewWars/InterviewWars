@@ -12,7 +12,7 @@ class Home extends Component {
       allQuestions: []
     };
     // binding here
-    // this.getQuestions = this.getQuestions.bind(this);
+    this.getQuestions = this.getQuestions.bind(this);
   }
 
   componentDidMount() {
