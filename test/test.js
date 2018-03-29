@@ -17,8 +17,19 @@ it('should add a question at /addQuestion', function(done) {
     .set('Content-Type', 'application/json')
     .set('Accept', 'application/json')
     .expect(200)
+    .expect('Content-Type', /json/)
     .end(function (err, res) {
       if (err) throw err;
+      expect(res.body).to.have.property("__authorid");
+      expect(res.body.__authorid).to.equal(1);
+      expect(res.body).to.have.property("question");
+      expect(res.body.question).to.equal("testing");
+      expect(res.body).to.have.property("difficulty");
+      expect(res.body.difficulty).to.equal("testing");
+      expect(res.body).to.have.property("type");
+      expect(res.body.type).to.equal("[testing]");
+      expect(res.body).to.have.property("company");
+      expect(res.body.company).to.equal("testing");
       done();
     });
 });
