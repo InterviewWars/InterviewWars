@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static("public"));
 app.use(cors());
-
+console.log('for commit')
 
 // Users
 app.post(
