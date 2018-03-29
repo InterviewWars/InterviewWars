@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './Home';
 import Question from './Question';
 import Answer from './Answer';
+import UserAnswers from './UserAnswers'
 
 class App extends React.Component {
    render() {
@@ -14,6 +15,7 @@ class App extends React.Component {
             <Route path ='/home' component={Home} />
             <Route path ='/question' component={Question} />
             <Route path ='/answer' component={Answer} />
+            <Route path ='/useranswers' component={UserAnswers} />
          </div>
          </Router>
       );
