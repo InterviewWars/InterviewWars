@@ -21,13 +21,27 @@ const style = {
 
 render() {
     return (
+        <div id="parent2">
         <div>
             <h1> Thanks for adding your interview question! </h1>
-            <h2> Enter here  <text-area 
-            rows="10"
-            cols="60"
-            />
-      <Button label="Submit" style={style} > Submit </Button ></h2>
+            <h2> <textarea
+  rows="10"
+  cols="60"
+/> 
+</h2>
+</div>
+<div>
+<TextField > </TextField > Difficulty
+</div>
+<div>
+<TextField > </TextField > Type
+</div>
+<div>
+<TextField > </TextField > Company
+</div>
+
+ <Button label="Submit" style={style} > Submit
+ </Button >
         </div>
     )
 }
