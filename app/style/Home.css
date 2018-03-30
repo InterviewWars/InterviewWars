@@ -9,6 +9,18 @@
     
 }
 
+h4 {
+  text-decoration: underline;
+  margin-top: 15px;
+  margin-bottom: 0;
+  text-align: center;
+  height: 25px;
+}
+
+form {
+  padding: 5px;
+}
+
 button.answer {
   float: right;
 }
@@ -21,4 +33,26 @@ li {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+#category {
+  padding-left: 10px;
+}
+
+#input {
+  height: 35px;
+  padding-left: 10px;
+  color: white;
+}
+
+#search-form {
+  padding: 0;
+  width: 98%;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.padding-left-15 {
+  padding-left: 15px;
 }
