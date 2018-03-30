@@ -1,0 +1,26 @@
+form {
+    width: 535px;
+    background-color:#424242;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+textarea {
+    resize: none;
+}
+
+textarea, text {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+}
+
+.fields {
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+}
