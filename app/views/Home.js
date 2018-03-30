@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Button, Subheader, List, ListItem } from "material-ui";
+import { Button, Subheader, List, ListItem, Select, InputLabel, TextField, FormControl } from "material-ui";
 import { render } from "react-dom";
 import { Link } from "react-router-dom";
 
 import "./../style/Home.css";
 
 class Home extends Component {
-
 
   render() { 
     const Questions = this.props.allQuestions.map((oneQuestion, index) => {
@@ -47,7 +46,22 @@ class Home extends Component {
             {" "}
             <Link to="/question">Submit New </Link>{" "}
           </Button>
-        </h2>
+        </h2>         
+        <form onSubmit={this.props.search}>
+          <InputLabel htmlFor="age-native-simple"><h2>Search questions{" "}</h2></InputLabel>
+          <Select
+            native
+            inputProps={{
+              id: 'category',
+            }}
+          >
+            <option value="" />
+            <option value='difficulty'>Difficulty</option>
+            <option value='company'>Company</option>
+            <option value='type'>Type</option>
+          </Select>
+          <TextField id='input' placeholder='Enter search term' />
+        </form>
         <List>{Questions}</List>
       </div>
     );

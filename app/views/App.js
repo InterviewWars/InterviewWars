@@ -17,11 +17,34 @@ class App extends React.Component {
         };
         // binding here
         this.getAllQuestions = this.getAllQuestions.bind(this);
+        this.searchQuestionsBy = this.searchQuestionsBy.bind(this);
         this.getQuestion = this.getQuestion.bind(this);
     }
 
     componentDidMount() {
         this.getAllQuestions();
+    }
+
+    searchQuestionsBy(e) {
+        e.preventDefault();
+        const that = this;
+        const data = {
+            column: e.target.category.value,
+            table: "questions",
+            input: e.target.input.value
+        };
+        fetch("http://localhost:3000/selectBy", {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(data),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        }).then(res => {
+            return res.json();
+        }).then(res => {
+            that.setState({ allQuestions: res })
+        })
+            .catch(error => console.error('Error:', error))
     }
 
     getQuestion(id) {
@@ -54,7 +77,7 @@ class App extends React.Component {
           <Router>
          <div>
             <Route exact path ='/' component={Login} />
-            <Route path ='/home' render={() => <Home allQuestions={this.state.allQuestions}/>}/>
+            <Route path ='/home' render={() => <Home allQuestions={this.state.allQuestions} search={this.searchQuestionsBy}/>}/>
             <Route path ='/question' component={Question} />
             <Route path ='/answer/:id' render={(props) => <Answer {...props} getQuestion={this.getQuestion}/>} />
             <Route path ='/useranswers' component={UserAnswers} />
