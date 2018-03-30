@@ -23,7 +23,7 @@ class Home extends Component {
 
       return (
         <li key={questionID} className="questions">
-        <div>
+        <div className="padding-left-15">
           {question} <br/>
           {difficulty} <br/>
           </div>
@@ -47,8 +47,8 @@ class Home extends Component {
             <Link to="/question">Submit New </Link>{" "}
           </Button>
         </h2>         
-        <form onSubmit={this.props.search}>
-          <InputLabel htmlFor="age-native-simple"><h2>Search questions{" "}</h2></InputLabel>
+        <form id="search-form" onSubmit={this.props.search}>
+          <InputLabel htmlFor="age-native-simple"><h4>Search questions{" "}</h4></InputLabel>
           <Select
             native
             inputProps={{
