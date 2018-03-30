@@ -15,12 +15,14 @@ const style = {
 class Answer extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    // binding here
+    this.state = {
+        question: ''
+    };
   }
 
   componentDidMount() {
-      console.log("Am I passing in the props?", this.props.testing);
+      const question = this.props.getQuestion(this.props.match.params.id);
+      this.setState({ question });
   }
 
 
@@ -28,6 +30,7 @@ class Answer extends Component {
     return (
       <div>
         <h1> Thanks for working on a solution! </h1>
+        <h3> Question: {this.state.question}</h3>
         <form action="">
         <div className="fields">
           <textarea rows="10" cols="60" placeholder="Please input answer here..." />

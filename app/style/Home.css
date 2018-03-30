@@ -16,3 +16,9 @@ button.answer {
 button.answer:hover {
   font-weight: 800;
 }
+
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
